@@ -1,0 +1,10 @@
+{
+	"title":"标题{name}",
+	"title_show":"请输入标题",
+	"teacher":"讲师",
+	"teacher_show":"请选择讲师",
+	"subject":"分类",
+	"subject_show":"请选择课程分类",
+	"search":"查询",
+	"reset":"重置"
+}

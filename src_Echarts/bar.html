@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Echarts的简单使用</title>
+	<!-- 第一步：引入 ECharts 文件 -->
+	<script src="./js/echarts.min.js"></script>
+</head>
+<body>
+	<!--第二步： 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+	<div id="demo" style="width: 800px;height:600px;"></div>
+
+	<script type="text/javascript">
+		//第三步：基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('demo'));
+
+		//第四步：指定图表的配置项和数据
+		var option = {
+				title: { //图表标题
+					text: '本季度销售统计',
+					link:'https://www.baidu.com',
+					subtext:'截止7月17日',
+					textStyle:{
+						color:'blue'
+					}
+				},
+				tooltip: { //提示框组件
+					triggerOn:'mousemove',
+					// showDelay:1000,
+					// formatter:'{a}<br/> {b} :{c}双'
+				},
+				legend: { //图例
+					data:['销量','库存'],
+					// borderColor:'blue',
+					// borderWidth:5
+				},
+				xAxis: {
+					data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子","腰带"]
+				},
+				yAxis: {},
+				series: [ //图表数据
+					{
+						name: '销量',
+						type: 'bar', //图表的类型
+						data: [5, 20, 36, 10, 10, 20,16]
+					},
+					{
+						name: '库存',
+						type: 'bar', //图表的类型
+						data: [2, 10, 10, 0, 11, 14,0]
+					}
+				]
+		};
+
+		//第五步：使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+    </script>	
+</body>
+</html>
